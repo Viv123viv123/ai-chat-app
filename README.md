@@ -1,4 +1,4 @@
-# SOEN Collaborative AI Project
+# Collaborative AI Project
 
 A full-stack collaborative project workspace built with React, Vite, Node.js, Express, MongoDB, and Socket.IO. The application includes user authentication, project management, real-time collaboration, AI-assisted messaging, and a browser-based code sandbox experience.
 
