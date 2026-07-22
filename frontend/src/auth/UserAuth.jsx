@@ -4,38 +4,28 @@ import { UserContext } from '../context/user.context'
 
 const UserAuth = ({ children }) => {
 
-    const { user } = useContext(UserContext)
-    const [ loading, setLoading ] = useState(true)
+    const { user, loading } = useContext(UserContext)
     const token = localStorage.getItem('token')
     const navigate = useNavigate()
 
 
-
-
     useEffect(() => {
-        if (user) {
-            setLoading(false)
-        }
-
         if (!token) {
             navigate('/login')
+            return
         }
 
-        if (!user) {
+        if (!loading && !user) {
             navigate('/login')
         }
 
-    }, [])
+    }, [token, loading, user, navigate])
 
     if (loading) {
         return <div>Loading...</div>
     }
 
-
-    return (
-        <>
-            {children}</>
-    )
+    return <>{children}</>
 }
 
 export default UserAuth
