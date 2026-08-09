@@ -6,9 +6,36 @@ A full-stack collaborative project workspace built with React, Vite, Node.js, Ex
 
 - User registration, login, profile, and logout
 - JWT-based authentication for protected API routes
+
+<p align="center">
+   <img alt="image" src="https://github.com/user-attachments/assets/652b022d-a08e-4c2e-afa9-22f2cac4bc01" width="85%" />
+</p>
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/d9a0c86f-cfc8-4c23-b3de-bfa7ed4de0db" alt="image" width="85%"  />
+</p>
+
 - Project creation, collaborator management, and file-tree updates
+
+<p align="center">
+   <img alt="Screenshot 2026-08-09 163147" src="https://github.com/user-attachments/assets/11f86398-de25-45b6-a956-3fa5b6230b5d" width="85%" />
+</p>
+
+
+
+<p align="center">
+   <img  alt="image" src="https://github.com/user-attachments/assets/41c28596-875b-4071-9ae8-b4ffd467b5cc" width="85%" />
+</p>
+
 - Real-time project chat powered by Socket.IO
 - AI assistant integration using an AI message trigger (`@ai`)
+
+
+<p align="center">
+   <img alt="Screenshot 2026-08-09 162330" src="https://github.com/user-attachments/assets/787dea63-7025-4188-bf75-672b9b4e74e5" width="85% />
+
+</p>
+
+
 - Markdown rendering and code syntax highlighting in chat
 - WebContainer-based in-browser code preview for project files
 
