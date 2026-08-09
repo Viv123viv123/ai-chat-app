@@ -32,7 +32,6 @@ A full-stack collaborative project workspace built with React, Vite, Node.js, Ex
 
 <p align="center">
    <img alt="Screenshot 2026-08-09 162330" src="https://github.com/user-attachments/assets/787dea63-7025-4188-bf75-672b9b4e74e5" width="85% />
-
 </p>
 
 
