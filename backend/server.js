@@ -14,7 +14,9 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: '*'
+        origin: [ 'http://localhost:5173' ],
+        methods: [ 'GET', 'POST' ],
+        credentials: true
     }
 });
 
@@ -23,8 +25,9 @@ io.use(async (socket, next) => {
 
     try {
 
-        const token = socket.handshake.auth?.token || socket.handshake.headers.authorization?.split(' ')[ 1 ];
-        const projectId = socket.handshake.query.projectId;
+        const authHeader = socket.handshake.headers.authorization;
+        const token = socket.handshake.auth?.token || (authHeader?.startsWith('Bearer ') ? authHeader.split(' ')[1] : null);
+        const projectId = socket.handshake.query.projectId; 
 
         if (!mongoose.Types.ObjectId.isValid(projectId)) {
             return next(new Error('Invalid projectId'));

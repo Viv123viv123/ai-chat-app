@@ -26,7 +26,8 @@ const Register = () => {
             setUser(res.data.user)
             navigate('/')
         }).catch((err) => {
-            console.log(err.response.data)
+            // Fixed: Added optional chaining to prevent crash if server is down
+            console.log(err.response?.data || err.message)
         })
     }
 
@@ -51,7 +52,8 @@ const Register = () => {
                     <div className="mb-6">
                         <label className="block text-gray-400 mb-2" htmlFor="password">Password</label>
                         <input
-                            onChange={(e) => setPassword(e.target.value)} s
+                            // Fixed: Removed the stray 's' attribute that caused the console warning
+                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
                             id="password"
                             className="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
