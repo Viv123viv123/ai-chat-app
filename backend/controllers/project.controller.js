@@ -131,3 +131,19 @@ export const updateFileTree = async (req, res) => {
     }
 
 }
+
+export const getProjectMessages = async (req, res) => {
+    const { projectId } = req.params;
+
+    try {
+        const messages = await projectService.getProjectMessages({ projectId });
+
+        return res.status(200).json({
+            messages
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({ error: err.message });
+    }
+}

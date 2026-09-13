@@ -1,4 +1,5 @@
 import projectModel from '../models/project.model.js';
+import messageModel from '../models/message.model.js';
 import mongoose from 'mongoose';
 
 export const createProject = async ({
@@ -135,4 +136,20 @@ export const updateFileTree = async ({ projectId, fileTree }) => {
     })
 
     return project;
+}
+
+export const getProjectMessages = async ({ projectId }) => {
+    if (!projectId) {
+        throw new Error("projectId is required")
+    }
+
+    if (!mongoose.Types.ObjectId.isValid(projectId)) {
+        throw new Error("Invalid projectId")
+    }
+
+    const messages = await messageModel.find({
+        project: projectId
+    }).sort({ createdAt: 1 });
+
+    return messages;
 }

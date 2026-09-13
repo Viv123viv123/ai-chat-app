@@ -163,6 +163,13 @@ const Project = () => {
             setFileTree(res.data.project.fileTree || {})
         }).catch(err => console.error("Fetch project error:", err))
 
+        axios.get(`/projects/get-messages/${projectId}`).then(res => {
+            console.log("Messages fetched:", res.data.messages)
+            setMessages(res.data.messages || [])
+        }).catch(err => {
+            console.error("Fetch messages error:", err)
+        })
+
         axios.get('/users/all').then(res => {
             setUsers(res.data.users || [])
         }).catch(err => {
